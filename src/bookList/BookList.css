@@ -1,0 +1,10 @@
+#BookList {
+    float: left;
+    width: 40%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: #fff;
+    border-bottom: 2px solid #aaa;
+}
