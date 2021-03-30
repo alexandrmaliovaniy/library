@@ -68,15 +68,34 @@ function Compare(title, query) {
     }
 }
 
+function ComplexSearch(book, query) {
+    let lev = Compare(book.title.toLowerCase(), query.toLowerCase());
+    for (let i = 0; i < book.author.length; i++) {
+        let newLev = Compare(book.author[i].toLowerCase(), query.toLowerCase());
+        lev = lev > newLev ? newLev : lev;
+    }
+
+    for (let i = 0; i < book.tags.length; i++) {
+        let newLev = Compare(book.tags[i].toLowerCase(), query.toLowerCase());
+        lev = lev > newLev ? newLev : lev;
+    }
+    return lev;
+}
+
 function Search(books, query) {
     if (query.length === 0) return books;
     let res = [];
     for (let i = 0; i < books.length; i++) {
-        let lev = Compare(books[i].title.toLowerCase(), query.toLowerCase());
-        if (lev / query.length < 0.3) {
+        let lev = ComplexSearch(books[i], query);
+        let index = lev / query.length;
+        if (index < 0.5) {
+            books[i].index = index;
             res.push(books[i]);
         }
     }
+    res.sort((a, b) => {
+        return a.index > b.index;
+    })
     return res;
 }
 
