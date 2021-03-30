@@ -1,5 +1,7 @@
 import React from 'react';
 import './Book.css';
+import Author from './Author';
+import Tag from './Tag';
 
 function Book(props) {
     return(
@@ -19,11 +21,17 @@ function Book(props) {
                 </div>
 
                 <div className="tags">
-                    <strong>Tags:</strong>&nbsp;{props.tags.join(", ")}
+                <strong>Tags:</strong>&nbsp;
+                    {props.tags.map((el, index) => {
+                        return <Tag name={el} key={index}/>
+                    })}
                 </div>
 
                 <div className="author">
-                    <strong>Author:</strong>&nbsp;{props.author.join(", ")}
+                    <strong>Author:</strong>&nbsp;
+                    {props.author.map((el, index) => {
+                        return <Author name={el} key={index}/>
+                    })}
                 </div>
             </div>
             <button className="order">

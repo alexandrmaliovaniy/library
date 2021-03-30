@@ -23,6 +23,28 @@
     margin: 0;
     font-size: 20px;
 }
+.Book .info .author span, .Book .info .tags span {
+    color: rgb(42, 155, 231);
+    cursor: pointer;
+}
+.Book .info .author span:hover {
+    text-decoration: underline;
+}
+.Book .info .tags span:hover {
+    text-decoration: underline;
+}
+.Book .info .author span::after {
+    content: ', ';
+}
+.Book .info .tags span::after {
+    content: ', ';
+}
+.Book .info .author span:last-child:after {
+    content: none;
+}
+.Book .info .tags span:last-child:after {
+    content: none;
+}
 .Book button {
     width: 100px;
     flex-grow: 0;

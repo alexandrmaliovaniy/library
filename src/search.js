@@ -69,13 +69,13 @@ function Compare(title, query) {
 }
 
 function ComplexSearch(book, query) {
-    let lev = Compare(book.title.toLowerCase(), query.toLowerCase());
-    for (let i = 0; i < book.author.length; i++) {
+    let lev = Compare(book.title.toLowerCase(), query.toLowerCase()); // Search by title
+    for (let i = 0; i < book.author.length; i++) { // Search by author
         let newLev = Compare(book.author[i].toLowerCase(), query.toLowerCase());
         lev = lev > newLev ? newLev : lev;
     }
 
-    for (let i = 0; i < book.tags.length; i++) {
+    for (let i = 0; i < book.tags.length; i++) { // Search by tag
         let newLev = Compare(book.tags[i].toLowerCase(), query.toLowerCase());
         lev = lev > newLev ? newLev : lev;
     }
