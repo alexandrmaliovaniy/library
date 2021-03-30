@@ -23,3 +23,26 @@
 .App #Search:focus {
   box-shadow: 0px 0px 10px rgb(22, 65, 255);
 }
+
+
+@media screen and (max-width: 1600px) {
+  .App #Search {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .App #Search {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .App #Search {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}
