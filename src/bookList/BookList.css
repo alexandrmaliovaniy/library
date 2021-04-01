@@ -9,6 +9,9 @@
     border-bottom: 2px solid #aaa;
     box-sizing: border-box;
 }
+#BookList .noResult {
+  text-align: center;
+}
 
 @media screen and (max-width: 1600px) {
   #BookList {
