@@ -1,0 +1,41 @@
+.BookPlaceholder {
+    display: flex;
+    width: 96%;
+    padding-left: 2%;
+    padding-right: 2%;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+.BookPlaceholder .image {
+    width: 70px;
+    height: 120px;
+    background: #eee;
+}
+.BookPlaceholder .info {
+    flex-grow: 1;
+    padding-left: 5%;
+}
+.BookPlaceholder .info * {
+    background: #eee;
+    border-radius: 10px;
+}
+.BookPlaceholder .info .title {
+    width: 30%;
+    height: 20px;
+}
+.BookPlaceholder .info .rank {
+    width: 120px;
+    height: 20px;
+}
+.BookPlaceholder .info .description {
+    width: 70%;
+    height: 60px;
+    margin-top: 20px;
+}
+.BookPlaceholder .btn {
+    width: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}

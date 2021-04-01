@@ -1,15 +1,18 @@
 import React from 'react';
-import Book from '../book/Book';
+import BookPlaceholder from '../book/BookPlaceholder';
 import './BookList.css';
+
+const Book = React.lazy(()=> import('../book/Book'))
 
 function BookList(props) {
     return (
         <div id="BookList">
             {
-            props.books.length > 0 ? 
-            props.books.map((el, index) => {
-                return <Book {...el} key={el.id} index={index}/>
-            }) : <div className="noResult">No result...</div>}
+                props.books.length > 0 ? 
+                props.books.map((el, index) => {
+                    return <React.Suspense key={index} fallback={<BookPlaceholder key={index} />}>{<Book {...el} key={el.id} index={index}/>}</React.Suspense> 
+                }) : <div className="noResult">No result...</div>
+            }
         </div>
     );
 }
