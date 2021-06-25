@@ -10,7 +10,7 @@
 }
 .BookPlaceholder .image {
     width: 70px;
-    height: 120px;
+    height: 117px;
     background: #eee;
 }
 .BookPlaceholder .info {
@@ -24,6 +24,7 @@
 .BookPlaceholder .info .title {
     width: 30%;
     height: 20px;
+    margin-top: 0;
 }
 .BookPlaceholder .info .rank {
     width: 120px;
